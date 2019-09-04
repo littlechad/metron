@@ -1,6 +1,6 @@
 # Metron
 
-> We’re here for a reason. The Lord of Light is keeping Beric alive for a reason. He gave a failed drunk priest the power to bring him back for a reason. We are part of something larger than ourselves. ~ Metron
+> Never let judgment cloud your curiosity. ~ Metron
 
 Marketing Dashboard
 
