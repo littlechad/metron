@@ -13,12 +13,12 @@ Marketing Dashboard
 
 ### Docker (recommended)
 
-* `$ git clone https://github.com/littlechad/next-metron.git && cd metron`
+* `$ git clone https://github.com/littlechad/metron.git && cd metron`
 * `$ docker-compose -f docker-compose.dev.yaml up -d`
 
 ### Locally
 
-    git clone https://github.com/littlechad/next-metron.git
+    git clone https://github.com/littlechad/metron.git
     cd metron
     yarn install
 
@@ -92,7 +92,7 @@ This project is licensed under the MIT license, Copyright (c) 2018 Metron. For m
 [TODO]
 
 # Versioning
-**Next Dashboard** is using [semantic versioning](https://semver.org/). For the versions available, see the [tags on this repository](https://github.com/littlechad/next-metron.git/metron.git/tags).
+**Next Dashboard** is using [semantic versioning](https://semver.org/). For the versions available, see the [tags on this repository](https://github.com/littlechad/metron.git/tags).
 
 # Author
 Fian Kurniawan
