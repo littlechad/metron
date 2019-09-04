@@ -11,11 +11,7 @@ import { removeToken, setToken } from 'lib/auth'
 
 import {
   AUTH_ME,
-  authMeFailure,
   authMeSuccess,
-  AUTH_ME_TEST,
-  authMeTestFailure,
-  authMeTestSuccess,
 } from 'ducks/Auth/handler/me'
 
 import {
@@ -33,29 +29,6 @@ import {
 } from 'ducks/Auth/handler/signout'
 
 import apiCall from 'lib/api'
-
-export function authMeEpic(action$, state$, { api }) {
-  return action$
-    .pipe(
-      ofType(AUTH_ME),
-      mergeMap(() => api({
-        method: 'get',
-        path: { url: 'AUTH_ME' },
-        payloads: {
-          params: {},
-        },
-      })
-        .pipe(
-          map(({ response }) => {
-            const { auth, provider, user } = response
-            setToken(auth.token)
-            return authMeSuccess({ auth, provider, user })
-          }),
-          catchError(() => of(authSignout())),
-        )),
-      catchError(response => of(authMeFailure(response))),
-    )
-}
 
 export function authSigninEpic(action$, state$) {
   return action$
@@ -99,10 +72,10 @@ export function authSignoutSuccessEpic(action$, state$, { navigate }) {
     )
 }
 
-export function authMeTestEpic(action$, state$, { api }) {
+export function authMeEpic(action$, state$, { api }) {
   return action$
     .pipe(
-      ofType(AUTH_ME_TEST),
+      ofType(AUTH_ME),
       mergeMap(() => api({
         method: 'get',
         path: { url: 'AUTH_ME' },
@@ -115,7 +88,7 @@ export function authMeTestEpic(action$, state$, { api }) {
           map(({ response }) => {
             const { auth, provider, user } = response
             setToken(auth.token)
-            return authMeTestSuccess({ auth, provider, user })
+            return authMeSuccess({ auth, provider, user })
           }),
           catchError(response => of(authSignout(response))),
         )),
@@ -127,6 +100,6 @@ export const authSigninCombinedEpic = combineEpics(authSigninEpic)
 
 export function authCombinedEpic(...args) {
   return combineEpics(
-    authMeTestEpic,
+    authMeEpic,
   )(...args, { api: apiCall })
 }
