@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  d-metron:
+    image: d-metron
+    build:
+      context: .
+      dockerfile: ./dockerfiles/app.docker.dev
+    container_name: "d-metron"
+    command: yarn dev
+    env_file: .env
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - default
+      - bridge-network
+networks:
+  default:
+    driver: bridge
+  bridge-network:
+    external: true

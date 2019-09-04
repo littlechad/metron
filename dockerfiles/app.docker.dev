@@ -1,0 +1,27 @@
+FROM node:10-alpine
+
+# Install gsutil
+RUN apk add gcc \
+    python-dev \
+    libffi-dev \
+    openssl-dev \
+    musl-dev \
+    py2-pip
+RUN pip install --upgrade pip
+RUN pip install pyopenssl
+RUN wget https://storage.googleapis.com/pub/gsutil.tar.gz --no-check-certificate
+RUN tar xfz gsutil.tar.gz -C $HOME
+RUN ln -s $HOME/gsutil/gsutil /usr/local/bin/
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Bundle app source
+COPY ./ /usr/src/app
+
+# Install app dependencies
+RUN yarn global add nodemon
+RUN yarn install
+
+CMD ["yarn", "dev"]
