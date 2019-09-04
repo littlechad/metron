@@ -2,7 +2,7 @@
 
 > Never let judgment cloud your curiosity. ~ Metron
 
-Marketing Dashboard
+Metron
 
 ## Prerequisites
 
