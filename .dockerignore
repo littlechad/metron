@@ -1,0 +1,7 @@
+node_modules
+docker-compose*.yml
+docker-compose*.yaml
+*-service.yaml
+*-deployment.yaml
+Jenkinsfile
+Jenkinsfile.*

@@ -1,0 +1,72 @@
+#app, #__next, .outer-container, html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.outer-container {
+  display: flex;
+  flex-direction: column;
+}
+.inner-container {
+  flex: 1 0 auto;
+}
+
+.widget-blog {
+  padding: 40px 0 0 20px;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+  background: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+          box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+video:-moz-full-screen {
+   width: 100%;
+   height: 100%;
+   max-height: 100%;
+}
+
+video:-webkit-full-screen {
+   width: 100%;
+   height: 100%;
+   max-height: 100%;
+}
+
+video:fullscreen {
+   width: 100%;
+   height: 100%;
+   max-height: 100%;
+}
+
+/* here you can put your own css to customize and override the theme */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+  background: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+          box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+
+input,
+video,
+textarea,
+select,
+:focus {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    outline: none;
+}
