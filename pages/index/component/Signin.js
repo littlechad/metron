@@ -21,7 +21,7 @@ import withLayout from 'lib/layout'
 
 import { Facebook, Google } from 'mdi-material-ui'
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   button: {
     margin: '0 auto',
   },
@@ -57,8 +57,7 @@ const styles = makeStyles(theme => ({
 function Component({ auth }) {
   const classes = styles()
   return (
-    <React.Fragment>
-
+    <>
       <Container
         direction="column"
         justify="center"
@@ -123,12 +122,16 @@ function Component({ auth }) {
         message={auth.error.message}
         open={auth.isError}
         variant="error"
-      />)}
-    </React.Fragment>)
+      />
+      )}
+    </>
+  )
 }
 
 Component.propTypes = {
   auth: PropTypes.shape({}).isRequired,
 }
+
+export const Signin = Component
 
 export default withLayout(Component)
