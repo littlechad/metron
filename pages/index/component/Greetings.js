@@ -60,7 +60,8 @@ function Component({ auth }) {
           className={classes.logo}
         />
       </ContainerItem>
-    </Container>)
+    </Container>
+  )
 }
 
 Component.propTypes = {
