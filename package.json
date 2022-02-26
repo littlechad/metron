@@ -39,7 +39,7 @@
     "rxjs": "^6.5.3",
     "universal-cookie": "^4.0.2",
     "universal-cookie-express": "4.0.0",
-    "url-parse": "^1.4.4",
+    "url-parse": "^1.5.8",
     "url-pattern": "^1.0.3",
     "webpack": "4.39.3",
     "xhr2": "^0.2.0",
